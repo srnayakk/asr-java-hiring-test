@@ -5,6 +5,6 @@ import java.util.Optional;
 
 public interface AirService {
 
-	public Collection<String> getAllAirServices(String operatedBy,String id);
-	public Optional<String> getAllAirServiceConfigurations(String serviceConfigurationId);
+	public String getAllAirServices(String operatedBy,String id);
+	public String getAllAirServiceConfigurations(String serviceConfigurationId);
 }

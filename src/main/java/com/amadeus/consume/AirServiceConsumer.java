@@ -11,11 +11,11 @@ public class AirServiceConsumer {
 		this.service = service;
 	}
 	 
-	public void consumeGetAllService(String operatedBy,String id) {
-		service.getAllAirServices(operatedBy,id);
+	public String consumeGetAllService(String operatedBy,String id) {
+		return service.getAllAirServices(operatedBy,id);
 	}
-	public void consumeGetAirConfiguration(String serviceConfigurationId) {
-		service.getAllAirServiceConfigurations(serviceConfigurationId);
+	public String  consumeGetAirConfiguration(String serviceConfigurationId) {
+		return service.getAllAirServiceConfigurations(serviceConfigurationId);
 	}
 
 }

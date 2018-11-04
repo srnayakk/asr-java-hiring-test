@@ -4,19 +4,20 @@ import java.util.Collection;
 import java.util.Optional;
 
 public class AirPortHandler implements AirService{
+	
+	String response="";
 
 	@Override
-	public Collection<String> getAllAirServices(String operatedBy,String id) {
-		
-			System.out.println("Airport OperatedBy " + operatedBy);
-			System.out.println("Airport ID " + id);
-		return null;
+	public String getAllAirServices(String operatedBy,String id) {
+		response=response + "Airport OperatedBy " + operatedBy;
+		response=response + "Airport ID " + id;
+		return response;
 	}
 
 	@Override
-	public Optional<String> getAllAirServiceConfigurations(String serviceConfigurationId) {
-		System.out.println("Airport ServiceConfigurationID " + serviceConfigurationId);
-		return null;
+	public String getAllAirServiceConfigurations(String serviceConfigurationId) {
+		response=response + "Airport ServiceConfigurationID " + serviceConfigurationId;
+		return response;
 	}
 
 }

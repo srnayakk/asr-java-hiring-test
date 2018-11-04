@@ -21,18 +21,19 @@ public class AirServiceController {
 	@Path("/serviceType/{serviceType}/opName/{opName}/operatedBy/{operatedBy}/id/{id}/serviceConfigurationId/{serviceConfigurationId}")
 	//@Produces("application/xml")
 	public Response processService(@PathParam("serviceType") String serviceType,@PathParam("opName") String opName,@PathParam("operatedBy") String operatedBy,@PathParam("id") String id,@PathParam("serviceConfigurationId") String serviceConfigurationId) {
+		String response="";
 		System.out.println(serviceType+"========"+opName+"=========="+operatedBy+"==========="+id+ "============"+ serviceConfigurationId);
 		Injector injector = Guice.createInjector(new AirServiceInjector(serviceType));		
 		AirServiceConsumer app = injector.getInstance(AirServiceConsumer.class);
 		
 		if(opName.equals("getAllAirServices")) {
-			app.consumeGetAllService(operatedBy,id);
+			response=app.consumeGetAllService(operatedBy,id);
 		}
 		else if(opName.equals("getAllAirServiceConfigurations")) {
-			app.consumeGetAirConfiguration(serviceConfigurationId);;
+			response=app.consumeGetAirConfiguration(serviceConfigurationId);
 		}
 		
-		return Response.status(200).entity("everything").build();
+		return Response.status(200).entity(response).build();
 	}
 
 	
