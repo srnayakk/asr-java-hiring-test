@@ -10,7 +10,7 @@ public class AirCraftHandler implements AirService{
 		if(!(operatedBy.equals(null) && id.equals(null))) {
 		
 		if(("QF".equals(operatedBy) || "JQ".equals(operatedBy)) && id.startsWith("VH") ) {
-			response=response + "aircraft operated by carriers QF or JQ";
+			response=response + "aircraft operated by carriers QF or JQ .  ";
 			response=response + "aircraft ID is starting with \"VH\"";
 		}
 		}else {
